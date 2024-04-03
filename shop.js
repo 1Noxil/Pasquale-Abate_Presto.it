@@ -35,7 +35,6 @@ window.addEventListener("scroll", ()=>{
 fetch('./shop.json').then((response)=>response.json()).then((data)=> {
     let CategoryWrapper = document.querySelector('#CategoryWrapper');
     let cardWrapper = document.querySelector('#cardWrapper');
-    /* FILTRO PER CATEGORIA */
     function setCategory(params) {
         let category = data.map(el => el.category);
         let uniqueCategory = [];
@@ -70,20 +69,21 @@ fetch('./shop.json').then((response)=>response.json()).then((data)=> {
                         </div>
                         <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
                         <div class="card-heading">
-                        ${prod.name}
+                        <p class="font1">${prod.name}</p>
                         </div>
                         <div class="card-text">
-                         ${prod.category}
+                        <p class="font1">${prod.category}</p>
                         </div>
-                        <div class="card-text">
-                        ${prod.price}€
+                        <div class="card-text pb-auto">
+                        <p class="font1">${prod.price}€</p>
                         </div>
-                        <a href="#" class="card-button"> Purchase</a>
+                        <a href="#" class="card-button">Aggiungi al carrello</a>
                     </div>`
                     cardWrapper.appendChild(div);
         })
     }
     showCard(data);
+    /* FILTRO PER CATEGORIA */
     let radios = document.querySelectorAll('.form-check-input');
     function filterByCategory() {
         let checked = Array.from(radios).find(button=> button.checked);
@@ -92,13 +92,23 @@ fetch('./shop.json').then((response)=>response.json()).then((data)=> {
             showCard(data);
         } else {
             let filtered = data.filter(el => el.category == categoryId);
-             showCard(filtered);
+             return filtered;
         }
     }
     radios.forEach(input => {
         input.addEventListener('click', () =>{
-            filterByCategory();
+            showCard(filterByCategory());
         })
     })
+    /* FILTRO PER PREZZO */
+    let ranged = document.querySelector('#range');
+    function setRange(params) {
+        let range = data.map(el => el.price);
+        let rangeLength = range.length - 1;
+        range.sort((a,b)=> b.price - a.price);
+        ranged.max = range[0];
+        ranged.min = range[rangeLength];
+    }
+    setRange();
 });
 

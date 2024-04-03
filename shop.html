@@ -62,7 +62,8 @@
             <div class="col-12 text-center mt-4 mb-5 pb-5">
                 <h1>I nostri prodotti</h1>
             </div>
-            <div class="col-4 font1">
+            <!-- FILTRI -->
+            <div class="col-3 font1">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header">
@@ -73,7 +74,7 @@
                       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div id="CategoryWrapper" class="accordion-body">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="all" checked>
+                                <input class="formFilter_custom form-check-input" type="radio" name="flexRadioDefault" id="all" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                   Tutte le categorie
                                 </label>
@@ -84,12 +85,15 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed  font1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                          FILTRO PER PREZZO
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          
+                            <label for="customRange3" class="form-label">Prezzo minimo</label>
+                            <input type="range" class="form-range" min="0" max="5" step="1" id="range">
+                            <label for="customRange3" class="form-label">Prezzo massimo</label>
+                            <input type="range" class="form-range" min="0" max="5" step="1" id="range">
                         </div>
                       </div>
                     </div>
@@ -108,7 +112,7 @@
                   </div>
             </div>
             <!-- CARD -->
-            <div id="cardWrapper" class="col-8 d-flex flex-wrap">
+            <div id="cardWrapper" class="col-9 d-flex flex-wrap">
                 
                 
             </div>

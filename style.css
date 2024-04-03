@@ -16,6 +16,7 @@ h1,h2,h3,p {
     --White: rgb(250,250,250);
     --Orange: #E04826;
     --OrangeHover: #b33a1f;
+    --OrangeShadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(240, 73, 35, 0.829)
 }
 .bg-black{
     background: var(--Black);
@@ -189,7 +190,21 @@ header{
   }
   .form-control:focus {
     border-color: var(--Orange);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(240, 73, 35, 0.829);
+    box-shadow: var(--OrangeShadow);
+  }
+  /* FILTRI */
+  .accordion-button:focus {
+    box-shadow: var(--OrangeShadow);
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: rgba(240, 73, 35, 0.829);
+  }
+  .form-check-input:checked {
+    background-color: var(--Orange);
+  border-color: var(--Orange);
+  }
+  .form-check-input:checked[type="radio"] {
+    box-shadow: var(--OrangeShadow);
   }
   /* CARD */
   .card-sl {
@@ -227,7 +242,7 @@ header{
     font-size: 18px;
     font-weight: bold;
     background: #fff;
-    padding: 10px 15px;
+    padding: 10px 13px;
 }
 
 .card-text {
