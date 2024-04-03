@@ -142,34 +142,48 @@
         </div>   
         <!-- FINE SWIPER -->
         <!-- RECENSIONI -->
-        <div class="container mt-5 pt-3 mb-5">
-            <div class="row d-flex flex-column align-items-center">
-                <div class="col-11 col-lg-7 d-flex justify-content-center text-center">
-                    <h3 class="py-3 px-3 mb-0 mt-5 bg-orange rounded-top-2 shadow-lg">Scrivi una recensione</h3>
+        <div class="container-fluid mt-5 pt-3 mb-5">
+            <div class="row">
+                <div class="col-12 col-md-6 d-flex align-items-center text-center">
+                    <p class="font1 ps-5 fs-4">
+                        Il tuo parere è estremamente importante per noi. Vorremmo invitarti a condividere la tua esperienza di shopping con noi lasciando una recensione sul nostro sito web.
+                        Siamo impegnati a garantire la tua soddisfazione e a offrirti prodotti e servizi di alta qualità.
+                        La tua opinione ci aiuterà a identificare le aree in cui possiamo migliorare e a mantenere elevati standard di eccellenza.
+                    </p>
                 </div>
-                <div class="col-11 col-lg-6 p-5 bg_white rounded-2 shadow-lg">
-                    <form>
-                        <div class="mb-3">
-                          <label for="userName" class="form-label formtxt_custom">Nome</label>
-                          <input type="text" class="form-control" id="userName" aria-describedby="emailHelp">
+                <div class="col-12 col-md-6">
+                    <div class="container-fluid">
+                        <div class="row d-flex flex-column align-items-center">
+                            <div class="col-11 col-lg-7 d-flex justify-content-center text-center">
+                                <h3 class="py-3 px-3 mb-0 mt-5 bg-orange rounded-top-2 shadow-lg">Scrivi una recensione</h3>
+                            </div>
+                            <div class="col-11 col-lg-6 p-5 bg_white rounded-2 shadow-lg">
+                                <form>
+                                    <div class="mb-3">
+                                      <label for="userName" class="form-label formtxt_custom">Nome</label>
+                                      <input type="text" class="form-control" id="userName" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="userSubtitle" class="form-label formtxt_custom">Titolo recensione</label>
+                                      <input type="text" class="form-control" id="userSubtitle">
+                                    </div>
+                                    <div>
+                                        <label for="userReview" class="form-label formtxt_custom">Scrivi la tua recensione</label>
+                                        <input type="text" class="form-control review_custom" id="userReview">
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-11 col-lg-6 d-flex justify-content-end">
+                                    <button id="btnReview" type="button" class="search-button formtxt_custom bg_white rounded-2 rounded-top-0 px-3 py-2 shadow-lg">Invia</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                          <label for="userSubtitle" class="form-label formtxt_custom">Titolo recensione</label>
-                          <input type="text" class="form-control" id="userSubtitle">
-                        </div>
-                        <div>
-                            <label for="userReview" class="form-label formtxt_custom">Scrivi la tua recensione</label>
-                            <input type="text" class="form-control review_custom" id="userReview">
-                        </div>
-                      </form>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-11 col-lg-6 d-flex justify-content-end">
-                        <button id="btnReview" type="button" class="search-button formtxt_custom bg_white rounded-2 rounded-top-0 px-3 py-2 shadow-lg">Invia</button>
                     </div>
                 </div>
             </div>
         </div>
+        
         <!-- FINE RECENSIONI -->
     </section>
             
