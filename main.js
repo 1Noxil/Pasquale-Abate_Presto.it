@@ -1,3 +1,4 @@
+/* NAVBAR */
 let navbar = document.querySelector('#navbar');
 let links = document.querySelectorAll('.nav-link');
 
