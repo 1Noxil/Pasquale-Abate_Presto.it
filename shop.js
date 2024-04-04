@@ -61,7 +61,7 @@ fetch('./shop.json').then((response)=>response.json()).then((data)=> {
         cardWrapper.innerHTML = '';
         array.forEach(prod=>{
             let div = document.createElement('div');
-            div.classList.add('col-md-4');
+            div.classList.add('col-12','col-md-4');
             div.innerHTML = `
             <div class="card-sl m-3">
                         <div class="card-image">
