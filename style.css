@@ -16,7 +16,7 @@ h1,h2,h3,p {
     --White: rgb(250,250,250);
     --Orange: #E04826;
     --OrangeHover: #b33a1f;
-    --OrangeShadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(240, 73, 35, 0.829)
+    --OrangeShadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(240, 73, 35, 0.829);
 }
 .bg-black{
     background: var(--Black);
@@ -42,11 +42,56 @@ h1,h2,h3,p {
 .switch-mode{
     background-color: var(--White);
     color: var(--Black);
+    transition: 2s;
 }
+.fade-in {
+    -webkit-animation: focus-in-expand-fwd 0.8s ease-in-out;
+            animation: focus-in-expand-fwd 0.8s ease-in-out;
+}
+ @-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand-fwd {
+  0% {
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+.btncustico{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  
+}
+
 /* NAVBAR */
 .nav-custom{
     background-color: var(--White);
-    height: 90px;
+    min-height: 90px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -58,7 +103,6 @@ h1,h2,h3,p {
 }
 .nav-blur{
     backdrop-filter: blur(5px) saturate(0.8);
-    border-bottom: 3px solid var(--Orange);
 }
 .nav-link:focus, .nav-link:hover {
     color: var(--Black);
@@ -98,22 +142,14 @@ h1,h2,h3,p {
 .search-button:hover::after{
     width: 100%;
 }
-.navbar-collapse.collapse {
-    background-color: var(--White);
-}
-.navbar-collapse.collapsing {
-    background-color: var(--White);
-}
-.navbar-nav .dropdown-menu {
-    background-color: var(--White);  
-}
+
 
 /* Header */
 header{
     height: 100vh;
     margin-top: 90px;
     padding-top: 50px;
-    background: linear-gradient(rgb(250,250,250), rgba(250,250,250, 0.0)), url(./assets/main-bg.jpg);
+    background: linear-gradient(var(--White), rgba(250,250,250, 0.0)), url(./assets/main-bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -212,7 +248,8 @@ header{
     box-shadow: var(--OrangeShadow);
   }
   .accordion-button:not(.collapsed) {
-    background-color: rgba(240, 73, 35, 0.829);
+    background-color: var(--Orange);
+    color: var(--Black);
   }
   .form-check-input:checked {
     background-color: var(--Orange);
@@ -224,6 +261,10 @@ header{
   .range-cust::-webkit-slider-thumb {
     background: var(--Orange);
   }
+  .range-cust::-webkit-slider-thumb:active {
+    box-shadow: var(--OrangeShadow);
+    background: var(--Orange);
+  }
   .range-cust::-moz-range-thumb {
     background: var(--Orange);
   }
@@ -232,6 +273,10 @@ header{
     background: var(--Orange);
   }
   .range-cust::-ms-thumb {
+    background: var(--Orange);
+  }
+  .range-cust::-ms-thumb:active {
+    box-shadow: var(--OrangeShadow);
     background: var(--Orange);
   }
   /* CARD */

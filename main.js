@@ -5,10 +5,10 @@ let links = document.querySelectorAll('.nav-link');
 function navHover(color1,color2){
     links.forEach((link)=>{
         link.addEventListener("mouseenter", ()=>{
-            link.style.borderBottom = color1;
+            link.style.color = color1;
         });
         link.addEventListener("mouseleave", ()=>{
-            link.style.borderBottom = color2;
+            link.style.color = color2;
         });
     });
 };
@@ -17,7 +17,7 @@ function changeNavbar( background,) {
     navbar.classList.add(background);
 };
 
-navHover("2px solid var(--Orange)","transparent");
+navHover("var(--Orange)","var(--Black)");
 
 window.addEventListener("scroll", ()=>{
     let scrolled = window.scrollY;
@@ -133,25 +133,39 @@ btnReview.addEventListener('click', () => {
 
 
 
+
 /* DARKMODE */
 let btnDarkMode = document.querySelector('#btnDarkMode');
 let isCliked = true;
 
 btnDarkMode.addEventListener('click', () => {
+    btnDarkMode.classList.add('fade-in');
     if(isCliked){ //dark mode
         document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
         document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
         btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
         isCliked = false;
-        localStorage.setItem('mode','dark')
+        localStorage.setItem('mode','dark');
+        setTimeout(function() {
+            btnDarkMode.classList.remove("fade-in");
+        }, 1000);
     }else { // light mode
         document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
         document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
         btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
         isCliked = true;
         localStorage.setItem('mode','light')
+        setTimeout(function() {
+            btnDarkMode.classList.remove("fade-in");
+        }, 1000);
     }
-})
+});
+
+
+setTimeout(function() {
+    btnDarkMode.classList.remove("fade-in");
+    console.log('parappa');
+}, 100);
 
 let mode = localStorage.getItem('mode');
 if(mode === 'dark'){

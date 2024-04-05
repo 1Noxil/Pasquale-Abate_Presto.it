@@ -5,10 +5,10 @@ let links = document.querySelectorAll('.nav-link');
 function navHover(color1,color2){
     links.forEach((link)=>{
         link.addEventListener("mouseenter", ()=>{
-            link.style.borderBottom = color1;
+            link.style.color = color1;
         });
         link.addEventListener("mouseleave", ()=>{
-            link.style.borderBottom = color2;
+            link.style.color = color2;
         });
     });
 };
@@ -17,7 +17,7 @@ function changeNavbar( background,) {
     navbar.classList.add(background);
 };
 
-navHover("2px solid var(--Orange)","transparent");
+navHover("var(--Orange)","var(--Black)");
 
 window.addEventListener("scroll", ()=>{
     let scrolled = window.scrollY;
