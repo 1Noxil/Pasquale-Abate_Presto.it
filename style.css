@@ -39,11 +39,13 @@ h1,h2,h3,p {
     color: var(--Orange);
 }
 
-
+.switch-mode{
+    background-color: var(--White);
+    color: var(--Black);
+}
 /* NAVBAR */
 .nav-custom{
     background-color: var(--White);
-    color: var(--Black);
     height: 90px;
     width: 100%;
     position: fixed;
@@ -58,6 +60,9 @@ h1,h2,h3,p {
     backdrop-filter: blur(5px) saturate(0.8);
     border-bottom: 3px solid var(--Orange);
 }
+.nav-link:focus, .nav-link:hover {
+    color: var(--Black);
+  }
 /* SearchBar */
 .search-bar{
     border-color: var(--Orange);
@@ -92,6 +97,15 @@ h1,h2,h3,p {
 
 .search-button:hover::after{
     width: 100%;
+}
+.navbar-collapse.collapse {
+    background-color: var(--White);
+}
+.navbar-collapse.collapsing {
+    background-color: var(--White);
+}
+.navbar-nav .dropdown-menu {
+    background-color: var(--White);  
 }
 
 /* Header */
@@ -181,6 +195,7 @@ header{
   .formtxt_custom{
     font-family: "Andika", sans-serif;
     font-size: 1.5rem;
+    color: var(--Black);
   }
   .review_custom{
     height: 100px;
@@ -205,6 +220,19 @@ header{
   }
   .form-check-input:checked[type="radio"] {
     box-shadow: var(--OrangeShadow);
+  }
+  .range-cust::-webkit-slider-thumb {
+    background: var(--Orange);
+  }
+  .range-cust::-moz-range-thumb {
+    background: var(--Orange);
+  }
+  .range-cust::-moz-range-thumb:active {
+    box-shadow: var(--OrangeShadow);
+    background: var(--Orange);
+  }
+  .range-cust::-ms-thumb {
+    background: var(--Orange);
   }
   /* CARD */
   .card-sl {

@@ -19,7 +19,7 @@
     <!-- CDN MYCSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="switch-mode">
     <!-- NAVBAR -->
     <nav id="navbar" class="navbar navbar-expand-lg nav-custom font1" aria-label="Eleventh navbar example">
         <div class="container-fluid">
@@ -30,28 +30,31 @@
             
             <div class="collapse navbar-collapse justify-content-around px-sm-3" id="navbarsExample09">
                 <ul class="navbar-nav mb-2 ps-lg-5 ms-lg-5 mb-lg-0 fs-5">
-                    <li class="nav-item text-black">
-                        <a class="nav-link " aria-current="page" href="#">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link txt-black" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./shop.html">Shop</a>
+                        <a class="nav-link txt-black" href="./shop.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Donna</a>
+                        <a class="nav-link txt-black" href="#">Donna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Uomo</a>
+                        <a class="nav-link txt-black" href="#">Uomo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bambino</a>
+                        <a class="nav-link txt-black" href="#">Bambino</a>
                     </li>
                 </ul>
                 <form role="search" class="d-flex ms-auto">
-                    <input class="search-bar" type="search" placeholder="Cerca.." aria-label="Search">
-                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input class="search-bar text-dark" type="search" placeholder="Cerca.." aria-label="Search">
+                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass txt-black"></i></button>
                 </form>
                 <button class="btn me-2 ms-lg-4">
                     <i class="fa-regular fa-circle-user fs-3 txt-orange"></i>
+                </button>
+                <button id="btnDarkMode" class="btn">
+                    <i class="fa-solid fa-moon fs-4 txt-orange"></i>
                 </button>
             </div>
         </div>

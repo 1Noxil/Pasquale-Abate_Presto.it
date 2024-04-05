@@ -130,3 +130,38 @@ btnReview.addEventListener('click', () => {
     console.log(sectionreviews.reviews);
     swiper.update();
 })
+
+
+
+/* DARKMODE */
+let btnDarkMode = document.querySelector('#btnDarkMode');
+let isCliked = true;
+
+btnDarkMode.addEventListener('click', () => {
+    if(isCliked){ //dark mode
+        document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
+        isCliked = false;
+        localStorage.setItem('mode','dark')
+    }else { // light mode
+        document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
+        isCliked = true;
+        localStorage.setItem('mode','light')
+    }
+})
+
+let mode = localStorage.getItem('mode');
+if(mode === 'dark'){
+    document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
+    isCliked = false;
+} else {
+    document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
+    isCliked = true;
+}

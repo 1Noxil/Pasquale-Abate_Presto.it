@@ -22,40 +22,43 @@
 <body>
     <!-- NAVBAR -->
     <nav id="navbar" class="navbar navbar-expand-lg nav-custom font1" aria-label="Eleventh navbar example">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="nav-logo" src="./assets/logo-no-background.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse justify-content-around px-sm-3" id="navbarsExample09">
-                <ul class="navbar-nav mb-2 ps-lg-5 ms-lg-5 mb-lg-0 fs-5">
-                    <li class="nav-item text-black">
-                        <a class="nav-link " aria-current="page" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Donna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Uomo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bambino</a>
-                    </li>
-                </ul>
-                <form role="search" class="d-flex ms-auto">
-                    <input class="search-bar" type="search" placeholder="Cerca.." aria-label="Search">
-                    <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-                <button class="btn me-2 ms-lg-4">
-                    <i class="fa-regular fa-circle-user fs-3 txt-orange"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="nav-logo" src="./assets/logo-no-background.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse justify-content-around px-sm-3" id="navbarsExample09">
+              <ul class="navbar-nav mb-2 ps-lg-5 ms-lg-5 mb-lg-0 fs-5">
+                  <li class="nav-item">
+                      <a class="nav-link txt-black" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link txt-black" href="./shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link txt-black" href="#">Donna</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link txt-black" href="#">Uomo</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link txt-black" href="#">Bambino</a>
+                  </li>
+              </ul>
+              <form role="search" class="d-flex ms-auto">
+                  <input class="search-bar text-dark" type="search" placeholder="Cerca.." aria-label="Search">
+                  <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass txt-black"></i></button>
+              </form>
+              <button class="btn me-2 ms-lg-4">
+                  <i class="fa-regular fa-circle-user fs-3 txt-orange"></i>
+              </button>
+              <button id="btnDarkMode" class="btn">
+                  <i class="fa-solid fa-moon fs-4 txt-orange"></i>
+              </button>
+          </div>
+      </div>
+  </nav>
     <!-- SHOP -->
     <section class="container mt-5 pt-5">
         <div class="row justify-content-center justify-content-lg-start">
@@ -90,22 +93,9 @@
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <label for="customRange3" class="form-label">Prezzo minimo</label>
-                            <input type="range" class="form-range" min="0" max="5" step="1" id="range">
                             <label for="customRange3" class="form-label">Prezzo massimo</label>
-                            <input type="range" class="form-range" min="0" max="5" step="1" id="range">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button collapsed font1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Accordion Item #3
-                        </button>
-                      </h2>
-                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <input type="range" class="form-range range-cust" id="range">
+                            <p id="rangePrice" class="font1"></p>
                         </div>
                       </div>
                     </div>

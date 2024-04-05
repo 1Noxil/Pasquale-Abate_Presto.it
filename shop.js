@@ -102,13 +102,61 @@ fetch('./shop.json').then((response)=>response.json()).then((data)=> {
     })
     /* FILTRO PER PREZZO */
     let ranged = document.querySelector('#range');
-    function setRange(params) {
-        let range = data.map(el => el.price);
-        let rangeLength = range.length - 1;
-        range.sort((a,b)=> b.price - a.price);
-        ranged.max = range[0];
-        ranged.min = range[rangeLength];
+    let rangePrice = document.querySelector('#rangePrice');
+    function setRangeMax() {
+       let maxPrice = data[0].price;
+       ranged.max = maxPrice;
+       ranged.value = maxPrice;
+       rangePrice.innerHTML = `${maxPrice}`;
     }
-    setRange();
+    setRangeMax();
+    ranged.addEventListener('input', () => {
+        rangePrice.innerHTML = `${ranged.value}`;
+        filterByPrice();
+    });
+    function filterByPrice() {
+        let filtered = data.filter(article => +article.price <= ranged.value);
+        showCard(filtered);
+    };
+    let searchBar = document.querySelector('.search-bar');
+    function filterByWord () {
+        let filtered = data.filter(article => article.name.toLowerCase().includes(searchBar.value.toLowerCase()));
+        showCard(filtered);
+    }
+    searchBar.addEventListener('input',() => {
+        filterByWord();
+    })
 });
 
+/* DARKMODE */
+let btnDarkMode = document.querySelector('#btnDarkMode');
+let isCliked = true;
+
+btnDarkMode.addEventListener('click', () => {
+    if(isCliked){ //dark mode
+        document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
+        isCliked = false;
+        localStorage.setItem('mode','dark')
+    }else { // light mode
+        document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
+        document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
+        btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
+        isCliked = true;
+        localStorage.setItem('mode','light')
+    }
+})
+//DARK MODE
+let mode = localStorage.getItem('mode');
+if(mode === 'dark'){
+    document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
+    isCliked = false;
+} else {
+    document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
+    isCliked = true;
+}
