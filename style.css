@@ -1,8 +1,7 @@
 .font1{
     font-family: "Andika", sans-serif;
 }
-body{
-    background-color: var(--White);
+body,html{
     overflow-x: hidden;
 }
 
@@ -38,11 +37,10 @@ h1,h2,h3,p {
 .txt-orange{
     color: var(--Orange);
 }
-
 .switch-mode{
     background-color: var(--White);
     color: var(--Black);
-    transition: 2s;
+    transition: 0.5s;
 }
 .fade-in {
     -webkit-animation: focus-in-expand-fwd 0.8s ease-in-out;
@@ -85,7 +83,6 @@ h1,h2,h3,p {
   justify-content: center;
   align-items: center;
   width: 30px;
-  
 }
 
 /* NAVBAR */
@@ -106,6 +103,12 @@ h1,h2,h3,p {
 }
 .nav-link:focus, .nav-link:hover {
     color: var(--Black);
+  }
+  .hanbureg-btn:focus{
+    box-shadow: var(--OrangeShadow);
+  }
+  .hanbureg-btn:active{
+    box-shadow: var(--OrangeShadow);
   }
 /* SearchBar */
 .search-bar{

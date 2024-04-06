@@ -161,12 +161,6 @@ btnDarkMode.addEventListener('click', () => {
     }
 });
 
-
-setTimeout(function() {
-    btnDarkMode.classList.remove("fade-in");
-    console.log('parappa');
-}, 100);
-
 let mode = localStorage.getItem('mode');
 if(mode === 'dark'){
     document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');

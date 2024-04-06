@@ -133,21 +133,28 @@ let btnDarkMode = document.querySelector('#btnDarkMode');
 let isCliked = true;
 
 btnDarkMode.addEventListener('click', () => {
+    btnDarkMode.classList.add('fade-in');
     if(isCliked){ //dark mode
         document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
         document.documentElement.style.setProperty('--White', 'rgb(26,26,26)');
         btnDarkMode.innerHTML = `<i class="fa-solid fa-sun fs-4 txt-orange"></i>`
         isCliked = false;
-        localStorage.setItem('mode','dark')
+        localStorage.setItem('mode','dark');
+        setTimeout(function() {
+            btnDarkMode.classList.remove("fade-in");
+        }, 1000);
     }else { // light mode
         document.documentElement.style.setProperty('--White', 'rgb(250,250,250)');
         document.documentElement.style.setProperty('--Black', 'rgb(26,26,26)');
         btnDarkMode.innerHTML = `<i class="fa-solid fa-moon fs-4 txt-orange"></i>`
         isCliked = true;
         localStorage.setItem('mode','light')
+        setTimeout(function() {
+            btnDarkMode.classList.remove("fade-in");
+        }, 1000);
     }
-})
-//DARK MODE
+});
+
 let mode = localStorage.getItem('mode');
 if(mode === 'dark'){
     document.documentElement.style.setProperty('--Black', 'rgb(250,250,250)');
