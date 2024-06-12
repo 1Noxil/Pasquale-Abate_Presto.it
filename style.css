@@ -190,6 +190,7 @@ header{
   }
 
   .swiper-slide {
+    background-color: rgba(0, 0, 0, 0.3);
     font-size: 18px;
     color: #fff;
     -webkit-box-sizing: border-box;
@@ -219,7 +220,7 @@ header{
   }
 
   .swiper-slide .text {
-    font-size: 21px;
+    font-size: 24px;
     max-width: 400px;
     line-height: 1.3;
   }
@@ -239,9 +240,7 @@ header{
   .review_custom{
     height: 100px;
   }
-  .form-control{
-    border-color: var(--Black);
-  }
+
   .form-control:focus {
     border-color: var(--Orange);
     box-shadow: var(--OrangeShadow);
@@ -318,7 +317,9 @@ header{
     font-size: 18px;
     font-weight: bold;
     background: #fff;
+    color: rgb(26,26,26);
     padding: 10px 13px;
+    min-height: 90px;
 }
 
 .card-text {
